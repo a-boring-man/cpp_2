@@ -6,7 +6,7 @@
 /*   By: jrinna <jrinna@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 14:26:36 by jrinna            #+#    #+#             */
-/*   Updated: 2022/09/19 15:29:35 by jrinna           ###   ########lyon.fr   */
+/*   Updated: 2022/09/19 16:05:56 by jrinna           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,9 +47,9 @@ class Fixed
 		Fixed	operator--( int );
 
 		static Fixed & min( Fixed & a, Fixed & b);
-		static Fixed & min( const Fixed & a, const Fixed & b);
+		static const Fixed & min( const Fixed & a, const Fixed & b);
 		static Fixed & max( Fixed & a, Fixed & b);
-		static Fixed & max( const Fixed & a, const Fixed & b);
+		static const Fixed & max( const Fixed & a, const Fixed & b);
 	
 		float	toFloat( void ) const;
 		int		toInt( void ) const;
@@ -60,7 +60,7 @@ class Fixed
 	private:
 
 		int					_RawBits;
-		static const int	_fractional_bits = 16;
+		static const int	_fractional_bits = 8;
 };
 
 std::ostream &	operator<<( std::ostream & o, Fixed const & F );

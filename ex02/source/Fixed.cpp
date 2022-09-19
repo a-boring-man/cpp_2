@@ -6,7 +6,7 @@
 /*   By: jrinna <jrinna@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 08:33:03 by jrinna            #+#    #+#             */
-/*   Updated: 2022/09/19 15:30:00 by jrinna           ###   ########lyon.fr   */
+/*   Updated: 2022/09/19 16:05:29 by jrinna           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -187,6 +187,13 @@ std::ostream &			operator<<( std::ostream & o, Fixed const & F )
 /*
 ** --------------------------------- METHODS ----------------------------------
 */
+
+const Fixed	&Fixed::max( const Fixed & a, const Fixed & b ) {
+
+	if ( a._RawBits >= b._RawBits )
+		return (a);
+	return (b);
+}
 
 int		Fixed::toInt( void ) const {
 
