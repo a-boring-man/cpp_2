@@ -6,7 +6,7 @@
 /*   By: jrinna <jrinna@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 08:33:03 by jrinna            #+#    #+#             */
-/*   Updated: 2022/09/19 16:05:29 by jrinna           ###   ########lyon.fr   */
+/*   Updated: 2022/09/19 16:28:41 by jrinna           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,36 +77,42 @@ Fixed &	Fixed::operator=( Fixed const & rhs )
 // Operator > :
 bool	Fixed::operator>( Fixed const & rhs ) const {
 
+	cout << "Operator : > called" << endl;
 	return (this->_RawBits > rhs._RawBits);
 }
 
 // Operator < :
 bool	Fixed::operator<( Fixed const & rhs ) const {
 
+	cout << "Operator : < called" << endl;
 	return (this->_RawBits < rhs._RawBits);
 }
 
 // Operator >= :
 bool	Fixed::operator>=( Fixed const & rhs ) const {
 
+	cout << "Operator : >= called" << endl;
 	return (this->_RawBits >= rhs._RawBits);
 }
 
 // Operator <= :
 bool	Fixed::operator<=( Fixed const & rhs ) const {
 
+	cout << "Operator : <= called" << endl;
 	return (this->_RawBits <= rhs._RawBits);
 }
 
 // Operator == :
 bool	Fixed::operator==( Fixed const & rhs ) const {
 
+	cout << "Operator : == called" << endl;
 	return (this->_RawBits == rhs._RawBits);
 }
 
 // Operator != :
 bool	Fixed::operator!=( Fixed const & rhs ) const {
 
+	cout << "Operator : != called" << endl;
 	return (this->_RawBits != rhs._RawBits);
 }
 
@@ -117,24 +123,28 @@ bool	Fixed::operator!=( Fixed const & rhs ) const {
 // Operator + :
 Fixed	Fixed::operator+( Fixed const & rhs) const {
 
+	cout << "Operator : + called" << endl;
 	return (Fixed( this->_RawBits + rhs._RawBits ));
 }
 
 // Operator - :
 Fixed	Fixed::operator-( Fixed const & rhs) const {
 
+	cout << "Operator : - called" << endl;
 	return (Fixed( this->_RawBits - rhs._RawBits ));
 }
 
 // Operator * :
 Fixed	Fixed::operator*( Fixed const & rhs) const {
 
+	cout << "Operator : * called" << endl;
 	return (Fixed( this->_RawBits * rhs._RawBits ));
 }
 
 // Operator / :
 Fixed	Fixed::operator/( Fixed const & rhs) const {
 
+	cout << "Operator : / called" << endl;
 	return (Fixed( this->_RawBits / rhs._RawBits ));
 }
 
@@ -145,6 +155,7 @@ Fixed	Fixed::operator/( Fixed const & rhs) const {
 // Operator ++n :
 Fixed & Fixed::operator++( void ) {
 
+	cout << "Operator : ++n called" << endl;
 	this->_RawBits++;
 	return (*this);
 }
@@ -152,7 +163,8 @@ Fixed & Fixed::operator++( void ) {
 // Operator n++ :
 Fixed	Fixed::operator++( int ) {
 
-	Fixed	temp = Fixed( this->_RawBits );
+	cout << "Operator : n++ called" << endl;
+	Fixed	temp( *this );
 	this->_RawBits++;
 	return (temp);
 }
@@ -160,6 +172,7 @@ Fixed	Fixed::operator++( int ) {
 // Operator --n :
 Fixed & Fixed::operator--( void ) {
 
+	cout << "Operator : --n called" << endl;
 	this->_RawBits--;
 	return (*this);
 }
@@ -167,7 +180,8 @@ Fixed & Fixed::operator--( void ) {
 // Operator n-- :
 Fixed	Fixed::operator--( int ) {
 
-	Fixed	temp = Fixed( this->_RawBits );
+	cout << "Operator : n-- called" << endl;
+	Fixed	temp( *this );
 	this->_RawBits--;
 	return (temp);
 }
@@ -190,6 +204,8 @@ std::ostream &			operator<<( std::ostream & o, Fixed const & F )
 
 const Fixed	&Fixed::max( const Fixed & a, const Fixed & b ) {
 
+
+	cout << "const Max function called" << endl;
 	if ( a._RawBits >= b._RawBits )
 		return (a);
 	return (b);
