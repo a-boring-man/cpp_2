@@ -6,7 +6,7 @@
 /*   By: jrinna <jrinna@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 08:33:03 by jrinna            #+#    #+#             */
-/*   Updated: 2022/09/19 15:04:56 by jrinna           ###   ########lyon.fr   */
+/*   Updated: 2022/09/19 15:30:00 by jrinna           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,7 @@ Fixed::~Fixed() {
 ** --------------------------------- OVERLOAD ---------------------------------
 */
 
+// Operator = :
 Fixed &	Fixed::operator=( Fixed const & rhs )
 {
 	cout << "Copy assignment operator called" << endl;
@@ -69,6 +70,113 @@ Fixed &	Fixed::operator=( Fixed const & rhs )
 	return *this;
 }
 
+/*
+** ------------------------------ <,>,<=,>=,==,!= -----------------------------
+*/
+
+// Operator > :
+bool	Fixed::operator>( Fixed const & rhs ) const {
+
+	return (this->_RawBits > rhs._RawBits);
+}
+
+// Operator < :
+bool	Fixed::operator<( Fixed const & rhs ) const {
+
+	return (this->_RawBits < rhs._RawBits);
+}
+
+// Operator >= :
+bool	Fixed::operator>=( Fixed const & rhs ) const {
+
+	return (this->_RawBits >= rhs._RawBits);
+}
+
+// Operator <= :
+bool	Fixed::operator<=( Fixed const & rhs ) const {
+
+	return (this->_RawBits <= rhs._RawBits);
+}
+
+// Operator == :
+bool	Fixed::operator==( Fixed const & rhs ) const {
+
+	return (this->_RawBits == rhs._RawBits);
+}
+
+// Operator != :
+bool	Fixed::operator!=( Fixed const & rhs ) const {
+
+	return (this->_RawBits != rhs._RawBits);
+}
+
+/*
+** ---------------------------------- +,-,*,/ ---------------------------------
+*/
+
+// Operator + :
+Fixed	Fixed::operator+( Fixed const & rhs) const {
+
+	return (Fixed( this->_RawBits + rhs._RawBits ));
+}
+
+// Operator - :
+Fixed	Fixed::operator-( Fixed const & rhs) const {
+
+	return (Fixed( this->_RawBits - rhs._RawBits ));
+}
+
+// Operator * :
+Fixed	Fixed::operator*( Fixed const & rhs) const {
+
+	return (Fixed( this->_RawBits * rhs._RawBits ));
+}
+
+// Operator / :
+Fixed	Fixed::operator/( Fixed const & rhs) const {
+
+	return (Fixed( this->_RawBits / rhs._RawBits ));
+}
+
+/*
+** ----------------------------- n++,++n,n--,--n ------------------------------
+*/
+
+// Operator ++n :
+Fixed & Fixed::operator++( void ) {
+
+	this->_RawBits++;
+	return (*this);
+}
+
+// Operator n++ :
+Fixed	Fixed::operator++( int ) {
+
+	Fixed	temp = Fixed( this->_RawBits );
+	this->_RawBits++;
+	return (temp);
+}
+
+// Operator --n :
+Fixed & Fixed::operator--( void ) {
+
+	this->_RawBits--;
+	return (*this);
+}
+
+// Operator n-- :
+Fixed	Fixed::operator--( int ) {
+
+	Fixed	temp = Fixed( this->_RawBits );
+	this->_RawBits--;
+	return (temp);
+}
+
+/*
+** -------------------------------- REDIRECTION -------------------------------
+*/
+
+// Ostream redirection :
 std::ostream &			operator<<( std::ostream & o, Fixed const & F )
 {
 	o << F.toFloat();

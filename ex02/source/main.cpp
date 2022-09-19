@@ -1,40 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jrinna <jrinna@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/15 14:26:36 by jrinna            #+#    #+#             */
-/*   Updated: 2022/09/19 15:04:56 by jrinna           ###   ########lyon.fr   */
+/*   Created: 2022/09/19 08:31:02 by jrinna            #+#    #+#             */
+/*   Updated: 2022/09/19 14:11:02 by jrinna           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#include "Fixed.hpp"
 
-# include <iostream>
-# include <string>
+int main( void ) {
 
-class Fixed
-{
+	Fixed a;
+	Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
 
-	public:
+	std::cout << a << std::endl;
+	std::cout << ++a << std::endl;
+	std::cout << a << std::endl;
+	std::cout << a++ << std::endl;
+	std::cout << a << std::endl;
+	std::cout << b << std::endl;
 
-		Fixed();
-		Fixed( Fixed const & src );
-		~Fixed();
+	std::cout << Fixed::max( a, b ) << std::endl;
 
-		Fixed &		operator=( Fixed const & rhs );
-
-		int		getRawBits( void ) const;
-		void	setRawBits( int const raw);
-
-	private:
-
-		int					_RawBits;
-		static const int	_fractional_bits = 8;
-};
-
-using std::cout;
-using std::endl;
-using std::string;
+	return 0;
+}
