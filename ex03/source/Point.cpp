@@ -6,7 +6,7 @@
 /*   By: jrinna <jrinna@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 09:18:36 by jrinna            #+#    #+#             */
-/*   Updated: 2022/09/20 11:04:13 by jrinna           ###   ########lyon.fr   */
+/*   Updated: 2022/09/20 12:54:35 by jrinna           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 */
 
 // Default constructor :
-Point::Point() : _x(0), _y(0) {
+Point::Point() {
 
 	cout << "Point default constructor called" << endl;
 	return;
@@ -37,7 +37,6 @@ Point::Point( const Point & src ) : _x(src._x), _y(src._y) {
 	return;
 }
 
-
 /*
 ** -------------------------------- DESTRUCTOR --------------------------------
 */
@@ -47,7 +46,6 @@ Point::~Point() {
 	cout << "Point destructor called" << endl;
 	return;
 }
-
 
 /*
 ** --------------------------------- OVERLOAD ---------------------------------
@@ -70,10 +68,10 @@ std::ostream &			operator<<( std::ostream & o, Point const & P )
 	return o;
 }
 
-
 /*
 ** --------------------------------- METHODS ----------------------------------
 */
+
 
 
 /*
@@ -83,14 +81,14 @@ std::ostream &			operator<<( std::ostream & o, Point const & P )
 // Getter _x :
 const Fixed	Point::get_x( void ) const {
 
-	cout << "Point get_x called" << endl;
+	//cout << "Point get_x called" << endl;
 	return(this->_x);
 }
 
 // Getter _y :
 const Fixed	Point::get_y( void ) const {
 
-	cout << "Point get_y called" << endl;
+	//cout << "Point get_y called" << endl;
 	return(this->_y);
 }
 

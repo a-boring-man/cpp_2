@@ -6,7 +6,7 @@
 /*   By: jrinna <jrinna@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 08:31:02 by jrinna            #+#    #+#             */
-/*   Updated: 2022/09/19 16:26:38 by jrinna           ###   ########lyon.fr   */
+/*   Updated: 2022/09/20 12:56:08 by jrinna           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,14 @@
 
 int main( void ) {
 
-	Fixed a;
-	Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
+	int	main( void ) {
 
-	std::cout << a << std::endl;
-	std::cout << ++a << std::endl;
-	std::cout << a << std::endl;
-	std::cout << a++ << std::endl;
-	std::cout << a << std::endl;
-	std::cout << b << std::endl;
-
-	std::cout << Fixed::max( a, b ) << std::endl;
-
-	return 0;
+	Point	p1(1, 2);
+	cout << "-----------------------" << endl;
+	Point	p2;
+	cout << "-----------------------" << endl;
+	Point	p3(p1);
+	cout << "-----------------------" << endl;
+	p3 = p2;
+	cout << "-----------------------" << endl;
 }

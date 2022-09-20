@@ -6,11 +6,11 @@
 #    By: jrinna <jrinna@student.42lyon.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/15 13:56:36 by jrinna            #+#    #+#              #
-#    Updated: 2022/09/20 09:02:30 by jrinna           ###   ########lyon.fr    #
+#    Updated: 2022/09/20 12:55:37 by jrinna           ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
-LST_SRC := bsp.cpp Fixed.cpp Point.cpp
+LST_SRC := bsp.cpp Fixed.cpp Point.cpp main.cpp
 LST_INC := Fixed.hpp Point.hpp
 LST_OBJ := ${LST_SRC:.cpp=.o}
 
