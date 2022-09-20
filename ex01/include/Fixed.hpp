@@ -6,7 +6,7 @@
 /*   By: jrinna <jrinna@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 14:26:36 by jrinna            #+#    #+#             */
-/*   Updated: 2022/09/19 15:04:56 by jrinna           ###   ########lyon.fr   */
+/*   Updated: 2022/09/20 08:21:42 by jrinna           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ class Fixed
 	private:
 
 		int					_RawBits;
-		static const int	_fractional_bits = 16;
+		static const int	_fractional_bits = 8;
 };
 
 std::ostream &	operator<<( std::ostream & o, Fixed const & F );

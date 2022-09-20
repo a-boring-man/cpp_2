@@ -6,7 +6,7 @@
 /*   By: jrinna <jrinna@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 08:33:03 by jrinna            #+#    #+#             */
-/*   Updated: 2022/09/19 16:28:41 by jrinna           ###   ########lyon.fr   */
+/*   Updated: 2022/09/20 08:51:09 by jrinna           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -124,28 +124,32 @@ bool	Fixed::operator!=( Fixed const & rhs ) const {
 Fixed	Fixed::operator+( Fixed const & rhs) const {
 
 	cout << "Operator : + called" << endl;
-	return (Fixed( this->_RawBits + rhs._RawBits ));
+	float	result = this->toFloat() + rhs.toFloat();
+	return ( Fixed(result) );
 }
 
 // Operator - :
 Fixed	Fixed::operator-( Fixed const & rhs) const {
 
 	cout << "Operator : - called" << endl;
-	return (Fixed( this->_RawBits - rhs._RawBits ));
+	float	result = this->toFloat() - rhs.toFloat();
+	return ( Fixed(result) );
 }
 
 // Operator * :
 Fixed	Fixed::operator*( Fixed const & rhs) const {
 
 	cout << "Operator : * called" << endl;
-	return (Fixed( this->_RawBits * rhs._RawBits ));
+	float	result = this->toFloat() * rhs.toFloat();
+	return ( Fixed(result) );
 }
 
 // Operator / :
 Fixed	Fixed::operator/( Fixed const & rhs) const {
 
 	cout << "Operator : / called" << endl;
-	return (Fixed( this->_RawBits / rhs._RawBits ));
+	float	result = this->toFloat() / rhs.toFloat();
+	return ( Fixed(result) );
 }
 
 /*
