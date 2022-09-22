@@ -6,7 +6,7 @@
 /*   By: jrinna <jrinna@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 11:05:01 by jrinna            #+#    #+#             */
-/*   Updated: 2022/09/22 09:31:02 by jrinna           ###   ########lyon.fr   */
+/*   Updated: 2022/09/22 09:53:27 by jrinna           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,6 @@ bool	ft_is_inside( const Point T1, const Point T2, const Point T3, const Point p
 	cout << "A2 : " << A2 << endl;
 	float	A3 = ft_area( T1, p, T3 );
 	cout << "A3 : " << A3 << endl;
+	cout << "DIFF : " << A - (A1 + A2 + A3) << endl;
 	return (A - (A1 + A2 + A3) >= 0);
 }
