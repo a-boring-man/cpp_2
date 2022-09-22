@@ -6,7 +6,7 @@
 /*   By: jrinna <jrinna@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 14:26:36 by jrinna            #+#    #+#             */
-/*   Updated: 2022/09/20 08:54:41 by jrinna           ###   ########lyon.fr   */
+/*   Updated: 2022/09/22 08:54:19 by jrinna           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 # include <iostream>
 # include <string>
 # include <cmath>
+# include <math.h>
 
 class Fixed
 {

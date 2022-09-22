@@ -6,15 +6,13 @@
 /*   By: jrinna <jrinna@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 08:31:02 by jrinna            #+#    #+#             */
-/*   Updated: 2022/09/20 12:56:08 by jrinna           ###   ########lyon.fr   */
+/*   Updated: 2022/09/22 09:29:48 by jrinna           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.hpp"
+#include "Point.hpp"
 
 int main( void ) {
-
-	int	main( void ) {
 
 	Point	p1(1, 2);
 	cout << "-----------------------" << endl;
@@ -22,6 +20,14 @@ int main( void ) {
 	cout << "-----------------------" << endl;
 	Point	p3(p1);
 	cout << "-----------------------" << endl;
-	p3 = p2;
+	Point	p4(3,4);
+	cout << "-----------------------" << endl;
+	Point	p5(3,1);
+	cout << "-----------------------" << endl;
+	Point	p6(2,1.45f);
+	cout << "-----------------------" << endl;
+	p2 = p4;
+	cout << "-----------------------" << endl;
+	cout << ft_is_inside(p3, p2, p5, p6) << endl;
 	cout << "-----------------------" << endl;
 }
