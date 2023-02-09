@@ -6,11 +6,12 @@
 /*   By: jrinna <jrinna@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 08:33:03 by jrinna            #+#    #+#             */
-/*   Updated: 2022/09/20 08:51:09 by jrinna           ###   ########lyon.fr   */
+/*   Updated: 2023/02/09 12:58:40 by jrinna           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
+#include <iomanip>
 
 /*
 ** ------------------------------- CONSTRUCTOR --------------------------------
@@ -124,33 +125,51 @@ bool	Fixed::operator!=( Fixed const & rhs ) const {
 Fixed	Fixed::operator+( Fixed const & rhs) const {
 
 	cout << "Operator : + called" << endl;
-	float	result = this->toFloat() + rhs.toFloat();
-	return ( Fixed(result) );
+	Fixed	result;
+	result.setRawBits(this->getRawBits() + rhs.getRawBits());
+	return (result);
 }
 
 // Operator - :
 Fixed	Fixed::operator-( Fixed const & rhs) const {
 
 	cout << "Operator : - called" << endl;
-	float	result = this->toFloat() - rhs.toFloat();
-	return ( Fixed(result) );
+	Fixed	result;
+	result.setRawBits(this->getRawBits() - rhs.getRawBits());
+	return (result);
 }
 
 // Operator * :
 Fixed	Fixed::operator*( Fixed const & rhs) const {
 
 	cout << "Operator : * called" << endl;
-	float	result = this->toFloat() * rhs.toFloat();
-	return ( Fixed(result) );
+	Fixed	result;
+	result.setRawBits((this->toInt() * rhs.getRawBits()));
+	return (result);
 }
 
-// Operator / :
+// Operator / fast avec precision mais perte de range
 Fixed	Fixed::operator/( Fixed const & rhs) const {
 
 	cout << "Operator : / called" << endl;
-	float	result = this->toFloat() / rhs.toFloat();
-	return ( Fixed(result) );
+	Fixed	result;
+	result.setRawBits((this->getRawBits() * (1 << this->_fractional_bits)) / rhs.getRawBits());
+	return (result);
 }
+// Operator / fast sans precision mais sans perte de range
+/* Fixed	Fixed::operator/( Fixed const & rhs) const {
+
+	cout << "Operator : / called" << endl;
+	Fixed	result = Fixed((this->getRawBits() / rhs.getRawBits()));
+	return (result);
+} */
+// Operator / slow avec precision sans perte de range
+/* Fixed	Fixed::operator/( Fixed const & rhs) const {
+
+	cout << "Operator : / called" << endl;
+	Fixed	result = Fixed(this->toFloat() / rhs.toFloat());
+	return (result);
+} */
 
 /*
 ** ----------------------------- n++,++n,n--,--n ------------------------------
@@ -197,7 +216,7 @@ Fixed	Fixed::operator--( int ) {
 // Ostream redirection :
 std::ostream &			operator<<( std::ostream & o, Fixed const & F )
 {
-	o << F.toFloat();
+	o << std::setprecision(10) << F.toFloat();
 	return o;
 }
 
