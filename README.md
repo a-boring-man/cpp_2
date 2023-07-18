@@ -6,3 +6,5 @@ The third C++ exercises module at 42 school teaches us about the Orthodox Canoni
 It also introduces a new way to store non-natural numbers using the fixed-point notation.
 
 Finally, we had to use our newly created fixed-point class to solve a geometric problem.
+
+As a bonus i did mutiple implementation of the ```/``` opperator.
