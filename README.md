@@ -7,4 +7,6 @@ It also introduces a new way to store non-natural numbers using the fixed-point 
 
 Finally, we had to use our newly created fixed-point class to solve a geometric problem.
 
-As a bonus i did mutiple implementation of the ```/``` opperator.
+## Thoughts
+
+As a bonus, I implemented multiple versions of the ```/``` operator to explore different trade-offs in terms of performance, range, and precision. I really enjoyed learning a new way to store non-natural numbers.
